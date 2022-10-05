@@ -32,5 +32,4 @@ extension UIViewController {
         ac.addAction(cancel)
         present(ac, animated: true, completion: nil)
     }
-    
 }

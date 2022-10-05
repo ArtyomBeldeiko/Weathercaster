@@ -9,18 +9,18 @@ import Foundation
 
 struct CurrentWeather {
     let cityName: String
-    
     let temperature: Double
+    let feelsLikeTemperature: Double
+    let conditionCode: Int
+    
     var temperatureString: String {
         return "\(temperature.rounded())"
     }
     
-    let feelsLikeTemperature: Double
     var feelsLikeTemperatureString: String {
         return "\(feelsLikeTemperature.rounded())"
     }
     
-    let conditionCode: Int
     var iconNameString: String {
         switch conditionCode {
         case 200...232: return "cloud.bolt.rain.fill"
@@ -40,5 +40,4 @@ struct CurrentWeather {
         feelsLikeTemperature = currentWeatherData.main.feelsLike
         conditionCode = currentWeatherData.weather.first!.id
     }
-
 }
